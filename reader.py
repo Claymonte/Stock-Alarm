@@ -51,14 +51,15 @@ def send_mail():
         server.ehlo()
         server.starttls()
         server.ehlo
-
-        server.login('kasper.wickholm@gmail.com', 'vwmaibhvoyqfmqit')
+        
+        #Edit in neccessary emails and application password for gmail account
+        server.login('something@gmail.com', 'applicationpassword')
         subject = 'Price fell under purchase predetermined price'
         body = 'Check Tesla share price'
         msg = f"Subject: {subject}\n\n{body}"
         server.sendmail(
-            'kasper.wickholm@gmail.com',
-            'kaswic@hotmail.com',
+            'loginemail@gmail.com',
+            'recieveremail@anything.com',
             msg
         )
         print('Email has been sent!')
